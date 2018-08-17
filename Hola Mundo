@@ -8,8 +8,8 @@ using namespace std;
 
 void main()
 	{
-		cout<<"Hola Mundo"<<endl;
-		cout<<"Soy Marco" ;
+		cout<<"HolaMundo"<<endl;
+		cout<<"SoyMarco" ;
 		getch();
 }
 		
@@ -17,6 +17,6 @@ void main()
 
 //Proceso HolaMundo
 	//Escribir "HolaMundo"
-	//Escribir "Soy Marco"
+	//Escribir "SoyMarco"
 //FinProceso//
 

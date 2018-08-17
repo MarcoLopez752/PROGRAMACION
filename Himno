@@ -1,3 +1,23 @@
+//C++//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+	{
+		cout<<"BolivianosElHadoPropicio"<<endl;
+		cout<<"CoronoNuestrosVotosyAnhelos"<<endl ;
+		cout<<"EsYaLibre,YaLibreesteSuelo"<<endl;
+		cout<<"YaCesoSuServilCondicion."<<endl;
+		getch();
+}
+
+
+//Pseudocodigo//
+
 Algoritmo HolaMundo
 	Escribir 'Bolivianos El Hado Propicio'
 	Escribir 'Corono Nuestros Votos y Anhelos;'

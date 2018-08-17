@@ -1,0 +1,22 @@
+//C++//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+	{
+		cout<<"Hola Mundo"<<endl;
+		cout<<"Soy Marco" ;
+		getch();
+}
+		
+//Pseudocodigo
+
+//Proceso HolaMundo
+	//Escribir "HolaMundo"
+	//Escribir "Soy Marco"
+//FinProceso//
+

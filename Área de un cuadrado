@@ -20,7 +20,7 @@ void main()
   
   //Pseudocodigo//
   
-  Algoritmo AreaParalelogramo
+  Algoritmo AreaCuadrado
 	Escribir "lado"
 	Leer l
 	area = (l*l)

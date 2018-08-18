@@ -1,5 +1,8 @@
 //AreaDeUnTriangulo//
 
+//C++//
+
+
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"

@@ -13,10 +13,10 @@ void main()
 		getch();
 }
 		
-//Pseudocodigo
+//Pseudocodigo//
 
-//Proceso HolaMundo
-	//Escribir "HolaMundo"
-	//Escribir "SoyMarco"
-//FinProceso//
+Proceso HolaMundo
+	Escribir "HolaMundo"
+	Escribir "SoyMarco"
+FinProceso
 

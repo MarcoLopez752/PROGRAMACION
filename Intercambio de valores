@@ -1,3 +1,4 @@
+//c++//
 
 //Intercambio_de_valores//
 
@@ -28,3 +29,19 @@ void main()
 
 	_getwch();
 }
+
+
+//Pseudocodigo//
+
+Proceso Intercambio
+	Escribir "valor A: "
+	Leer A
+	Escribir "valor B: "
+	Leer B
+	aux<-A
+	A<-B
+	B<-AUX
+	Escribir "Imtercambio_de_valores_ejecutado"
+	Escribir "El valor de A es: ",A
+	Escribir "El valor de B es: ",B
+FinProceso

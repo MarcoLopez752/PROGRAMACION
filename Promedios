@@ -1,0 +1,65 @@
+
+//C++//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#include "stdio.h"
+
+using namespace std;
+
+void main()
+
+{
+	float n, p = 0;
+	cout << "Llego la hora" << endl;
+	cout << "Ingresa tus notas y ve tu destino" << endl;
+	cout << "--------------------------------------------------" << endl;
+	cout << "nota_1: ";
+	cin >> n;
+	p = p + n;
+	cout << "nota_2: ";
+	cin >> n;
+	p = p + n;
+	cout << "nota_3: ";
+	cin >> n;
+	p = p + n;
+	cout << "nota_4: ";
+	cin >> n;
+	p = p + n;
+	cout << "nota_5: ";
+	cin >> n;
+	p = p + n;
+
+	cout <<"promedio_final: "<< p/5<<endl;
+
+
+	_getwch();
+}
+
+//Pseudocodigo//
+
+
+Algoritmo Promedio
+	p <- 0
+	Escribir "nota_1"
+	Leer n
+	p <- p+n
+	Escribir "nota_2"
+	Leer n
+	p <- p+n
+	Escribir "nota_3"
+	Leer n
+	p <- p+n
+	Escribir "nota_4"
+	Leer n
+	p <- p+n
+	Escribir "nota_5"
+	Leer n
+	p <- p+n
+	Escribir "Promedio_Final"
+	p <- p/5
+	Escribir p
+FinAlgoritmo
+

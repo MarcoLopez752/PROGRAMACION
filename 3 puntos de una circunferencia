@@ -1,0 +1,95 @@
+//MARCO_LOPEZ//
+
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#include "stdio.h"
+
+
+using namespace std;
+
+void main()
+{
+	double x1, y1, x2, y2, x3, y3, C1, C2, C3, X1, Y1, Z1, X2, Y2, Z2, X3, Y3, Z3, Ds, Dx, Dy, Dz, C, D, E, Xf, Yf, R;
+
+	cout << "Ingrese_punto1" << endl;
+	cout << "x1: " << endl;
+	cin >> x1;
+	cout << "y1: " << endl;
+	cin >> y1;
+	cout << "Ingrese_punto2" << endl;
+	cout << "x2: " << endl;
+	cin >> x2;
+	cout << "y2: " << endl;
+	cin >> y2;
+	cout << "Ingresa_punto3" << endl;
+	cout << "x3: " << endl;
+	cin >> x3;
+	cout << "y3: " << endl;
+	cin >> y3;
+
+	
+
+	C1 = -1 * (pow(x1, 2) + pow(y1, 2));
+	X1 = x1;
+	Y1 = y1;
+	Z1 = 1;
+	
+	C2 = -1 * (pow(x2, 2) + pow(y2, 2));
+	X2 = x2;
+	Y2 = y2;
+	Z2 = 1;
+	
+	C3 = -1 * (pow(x3, 2) + pow(y3, 2));
+	X3 = x3;
+	Y3 = y3;
+	Z3 = 1;
+	cout << "---------------------------------"<<endl;
+
+	cout << "Coeficientes: " << endl;
+
+	cout << C1 << endl << endl;
+	cout << C2 << endl << endl;
+	cout << C3 << endl << endl;
+
+
+	Ds =round( ((X1*Y2*Z3) + (X2*Y3*Z1) + (X3*Y1*Z2)) - ((Z1*Y2*X3) + (Z2*Y3*X1) + (Z3*Y1*X2)));
+	cout<<"Determinante_del_sistmea: " << Ds<<endl;
+
+	Dx = ((C1*Y2*Z3) + (Y1*Z2*C3) + (Z1*C2*Y3)) - ((Z1*Y2*C3) + (C1*Z2*Y3) + (Y1*C2*Z3));              //METODO DE CRAMER//
+	cout <<"Determinante_de_x: " << Dx << endl;
+
+	Dy =((X1*C2*Z3) + (X2*C3*Z1) + (X3*C1*Z2)) - ((Z1*C2*X3) + (Z2*C3*X1) + (Z3*C1*X2));			   //REGLA DE SARRUS//
+	cout <<"Determinante_de_y: " <<Dy << endl;
+	
+	Dz = ((X1*Y2*C3) + (Y1*C2*X3) + (C1*X2*Y3)) - ((C1*Y2*X3) + (X1*C2*Y3) + (Y1*X2*C3));
+	cout <<"Determinante_de_z: " << Dz << endl;
+
+
+	cout << "----------------------------------------------------------------------------"<<endl;
+	
+	C = Dx / Ds;
+	//cout << C<<endl;//
+	
+	D = Dy / Ds;
+	//cout << D<<endl;//
+	
+	E = Dz / Ds;
+	//cout << E<<endl;//
+
+	//Xf =-1 * (pow((C / 2), 2));//
+	//Yf = -1 * (pow((D / 2), 2));//
+	Xf = (-C) / 2;
+	Yf = (-D) / 2;
+	R = round(sqrt((E*(-1)) + pow((C / 2), 2) + pow((D / 2), 2)));	
+
+	cout << "x: " << Xf << endl << endl;
+	cout << "y: " << Yf << endl << endl;
+	cout << "r: " << R  << endl << endl;
+	getch();
+}
+
+

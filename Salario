@@ -1,0 +1,32 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void main()
+{
+	float salarioB, salarioN;
+	int sm=2060;
+	
+	cout<<"Ingresar salario bruto: ";
+	cin>>salarioB;
+	
+	while(salarioB!=-999)
+	{
+		if (salarioB>=sm*4)
+			salarioN = salarioB * 0.749;
+		else
+			salarioN = salarioB * 0.879;
+
+		cout<<"El salario neto es: "<<salarioN<<endl;
+		
+		if(salarioB<2060)
+			cout<<"--Abuso al trabajador--"<<endl;
+		
+		cout<<"Ingrese otro salario: ";
+		cin>>salarioB;}
+
+	cout<<"--FIN--";
+		getch();
+}

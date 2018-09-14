@@ -1,0 +1,24 @@
+//C++//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void main()
+{
+	int i=1, numpar=0, suma=0, n;
+
+	cout<<"Vamos a calcular la suma de los N primeros numeros pares"<<endl;
+	cout<<"Ingrese n: ";
+	cin>> n;
+
+	while(i<=n)
+	{
+		numpar=numpar+2;
+		i=i+1;
+		suma=suma+numpar;}
+	
+	cout<<"La suma es: "<<suma;
+	getch();
+}

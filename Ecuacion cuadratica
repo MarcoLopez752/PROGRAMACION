@@ -1,0 +1,36 @@
+//C++//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+void main()
+{
+	float a, b, c, x1, x2, resultado;
+	cout<<"Calculo de ecuaciones cuadraticas"<<endl;
+	cout<<"Ingrese a: ";
+	cin>>a;
+	cout<<"Ingrese b: ";
+	cin>>b;
+	cout<<"Ingrese c: ";
+	cin>>c>
+	cout<<endl;
+	x1= ((-1)*b+sqrt(pow(b,2)-4*a*c))/2*a;
+	x2= ((-1)*b-sqrt(pow(b,2)-4*a*c))/2*a;
+	
+	cout<<"X1 es: "<<x1<<endl;
+	cout<<"X2 es: "<<x2<<endl;
+
+	resultado= pow(b,2)-4*a*c;
+
+	if(resultado==0)
+		cout<<"La ecuacion cuadratica tiene una unica solucion"<<endl;
+	if(resultado>0)
+		cout<<"La ecuacion cuadratica tiene dos soluciones reales"<<endl;
+	if(resultado<0)
+		cout<<"La ecuacion cuadratica tiene solucion imaginaria"<<endl;
+	getch();
+}
+

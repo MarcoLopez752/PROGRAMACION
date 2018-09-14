@@ -1,0 +1,37 @@
+//C++//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+void main()
+{	
+	cout<<"Ingrese sus datos y vea si es apto para votar"<<endl;
+	int edad, ant, nac;
+	do 
+		cout<<"Ingrese su edad"<<endl;
+		cin>>edad;
+
+		while(edad>=18)
+		{
+
+			do 
+				cout<<"Tiene usted antecedentes penales? / marque 1.Si o 2.No"<<endl;
+				cin>>ant;
+			while (ant!=1||ant!=2);
+				cout<<"Error/vuelva a ingresar dato"<<endl;
+	
+			do{
+				cout<<"Es usted de nacionalidad Boliviana / marque 1.Nacional o 2.Extranjero"<<endl;
+				cin>>nac;}
+			while (nac!=1||nac!=2);
+				cout<<"Error/vuelva a ingresar dato"<<endl;
+
+		if(edad>=18&&ant==2&&nac==1);
+			cout<<"Usted esta habilitado para votar en sufragio Nacional y Municipal"<<endl;
+		if
+		}
+	getch();
+}

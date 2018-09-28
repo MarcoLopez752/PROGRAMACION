@@ -1,0 +1,59 @@
+//cuadratica_referencia//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+//prototipos//
+
+float  discriminante (float a, float b, float c);
+void reales (float a, float b, float c, float &x1, float &x2);
+float unico (float a, float b, float c);
+void main()
+{
+	float a, b, c, valor1, valor2,d,valor_unico;
+	cout<<"Ingrese los valores de a, b, c"<<endl;
+	cin>>a>>b>>c;
+	
+	
+	d=discriminante (a,b,c);
+	
+	if(d>0)
+	
+	{	reales(a,b,c,valor1,valor2); //cuando la funcion no devuelve nada (void) //
+		cout<<"Raiz 1: "<<valor1;
+		cout<<endl;
+		cout<<"Raiz 2: "<<valor2;
+	}
+	else 
+		cout<<"No son reales";
+
+	if(	d==0)
+	{	valor_unico = unico (a, b, c);
+		cout<<"La solucion es: "<<valor_unico;
+	}
+
+	getch();
+}
+
+float discriminante (float a, float b, float c)
+{
+float d1;
+d1=(b*b)-4*a*c;
+return d1; 
+}
+
+void reales (float a, float b, float c, float &x1, float &x2)
+{
+	 x1= ((-1)*b+sqrt(pow(b,2)-4*a*c))/2*a;
+	 x2= ((-1)*b-sqrt(pow(b,2)-4*a*c))/2*a;
+
+}
+
+float unico (float a, float b, float c)
+{	int valor_unico1;
+	valor_unico1: ((-1)*b+sqrt(pow(b,2)-4*a*c))/2*a;
+	return valor_unico1;
+}

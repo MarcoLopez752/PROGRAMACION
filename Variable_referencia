@@ -10,7 +10,7 @@ using namespace std;
 
 float  discriminante (float a, float b, float c);
 void reales (float a, float b, float c, float &x1, float &x2);
-float unico (float a, float b, float c);
+void unico (float a, float b, float c, float &unico1);
 void main()
 {
 	float a, b, c, valor1, valor2,d,valor_unico;
@@ -29,12 +29,21 @@ void main()
 	}
 	else 
 		cout<<"No son reales";
+		cout<<endl;
 
 	if(	d==0)
-	{	valor_unico = unico (a, b, c);
+	{	unico(a, b, c, valor_unico);
 		cout<<"La solucion es: "<<valor_unico;
 	}
+	else
+	{cout<<"No tiene solucion unica"<<endl;
+	}
 
+
+	if (d<0)
+	{	
+	//faltaaaaaaaaaaaaaaaaa  imaginario//
+	}
 	getch();
 }
 
@@ -52,8 +61,8 @@ void reales (float a, float b, float c, float &x1, float &x2)
 
 }
 
-float unico (float a, float b, float c)
-{	int valor_unico1;
-	valor_unico1: ((-1)*b+sqrt(pow(b,2)-4*a*c))/2*a;
-	return valor_unico1;
+void unico (float a, float b, float c, float &unico1)
+{	
+	unico1=((-1)*b+sqrt(pow(b,2)-4*a*c))/2*a;
+	
 }

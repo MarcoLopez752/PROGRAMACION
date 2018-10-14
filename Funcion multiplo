@@ -1,0 +1,48 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int Multiplo(int A, int B);
+
+int main()
+{
+	int mayor, menor, a, b, Estatus;
+	cout << "Ingrese el primer numero natural: ";
+	cin >> a;
+	cout << "Ingrese el segundo numero natural: ";
+	cin >> b;
+
+	if (a > b)
+	{
+		mayor = a;
+		menor = b;
+	}
+	else
+	{
+		mayor = b;
+		menor = a;
+	}
+	
+	Estatus = Multiplo(mayor, menor);
+	cout << "El estatus es: " << Estatus;
+
+	_getwch();
+	return 0;
+	
+	
+}
+
+int Multiplo(int A, int B)
+{
+	int valor,estatus;
+	estatus = A % B;
+
+	if (estatus == 0)
+		valor = 1;
+	else
+		valor = 0;
+
+	return valor;
+}

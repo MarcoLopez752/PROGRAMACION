@@ -43,10 +43,11 @@ void main()
 				cout<<"Saliendo"<<endl;
 				break;
 			default:
-				cout<<"ERROR"<<endl;}
-				break;
+				cout<<"ERROR"<<endl;
+				break;}
+			
+			system ("cls");
 		}
-		system ("cls");
 		while(opcion!=4);
 
 		getch();

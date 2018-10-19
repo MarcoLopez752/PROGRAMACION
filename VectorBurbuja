@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
+#include "stdlib.h"
 #define MAX 100
 
 
@@ -43,7 +44,9 @@ void main()
 				break;
 			default:
 				cout<<"ERROR"<<endl;}
+				break;
 		}
+		system ("cls");
 		while(opcion!=4);
 
 		getch();

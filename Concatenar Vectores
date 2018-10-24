@@ -1,0 +1,75 @@
+/*Marco A. Lopez Guevara
+  Valeria Busch
+  Ejercicio 9
+*/
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+
+void Concatenar(double A[], double B[], int N, int M, double C[]);
+void cargarA(double A[], int o);
+void cargarB(double B[], int p);
+
+void main()
+{
+	int n, m;
+	cout << "Nota: El programa no admite mas de 50 elementos por vector" << endl;
+	cout << "Ingrese el numero de elementos de a:";
+	cin >> n;
+	cout << "Ingrese el numero de elementos de b:";
+	cin >> m;
+	double a[50], b[50], c[100];
+
+	cargarA(a, n);
+	cargarB(b, m);
+
+	Concatenar(a, b, n, m, c);
+
+
+
+	for (int i = 0; i < n + m; i++)
+		cout << c[i] << "-";
+
+
+	_getwch();
+}
+
+void cargarA(double A[], int N)
+{
+	
+	for (int i=0; i < N; i++)
+		
+	cin >> A[i];
+
+	cout << "Vector_A_cargado"<<endl;
+}
+
+void cargarB(double B[], int M)
+{
+	
+	for (int i=0; i < M; i++)
+		
+	cin >> B[i];
+
+	cout << "Vector_B_cargado"<<endl;
+}
+
+
+void Concatenar(double A[], double B[], int N, int M, double C[])
+{
+	int  i, j;
+	for (i = 0; i < N; i++)
+		C[i] = A[i];
+	for (int j = 0; j < M; j++)
+	{
+		C[i] = B[j];
+		i++;
+
+	}
+
+}

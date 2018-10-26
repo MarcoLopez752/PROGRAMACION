@@ -7,23 +7,23 @@
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
-
+#define MAX 100
 
 using namespace std;
 
 void Concatenar(double A[], double B[], int N, int M, double C[]);
-void cargarA(double A[], int o);
-void cargarB(double B[], int p);
+void cargarA(double A[], int N);
+void cargarB(double B[], int M);
 
 void main()
 {
 	int n, m;
-	cout << "Nota: El programa no admite mas de 50 elementos por vector" << endl;
+	cout << "Nota: El programa admite 100 elementos por vector" << endl;
 	cout << "Ingrese el numero de elementos de a:";
 	cin >> n;
 	cout << "Ingrese el numero de elementos de b:";
 	cin >> m;
-	double a[50], b[50], c[100];
+	double a[MAX], b[MAX], c[200];
 
 	cargarA(a, n);
 	cargarB(b, m);

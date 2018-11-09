@@ -1,0 +1,38 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+
+void Frase(string Dato);
+
+void main()
+{
+	string dato;
+	cout<<"Ingrese dato que comeinza con una palabra y termine en una palabra"<<endl;
+	getline(cin,dato);
+
+	Frase(dato);
+
+	getch();
+}
+
+
+void Frase(string Dato)
+{int vocales=0,consonantes=0,palabras=0,espacio=0;
+for(int i=0;i<Dato.length();i++)
+	{if (Dato.at(i)=='a'||Dato.at(i)=='e'||Dato.at(i)=='i'||Dato.at(i)=='o'||Dato.at(i)=='u')
+		vocales=vocales+1;	
+	//if (Dato.at(i)!='a'||Dato.at(i)!='e'||Dato.at(i)!='i'||Dato.at(i)!='o'||Dato.at(i)!='u'||Dato.at(i)!=' ')
+		consonantes=consonantes+1;//
+	if(Dato.at(i)==' ')
+		espacio=espacio+1;
+
+	}
+palabras=espacio+1;
+
+cout<<"Palabras: "<<palabras<<endl;
+cout<<"Vocales: "<<vocales<<endl;
+cout<<"Consonantes: "<<Dato.length()-espacio-vocales<<endl;
+}

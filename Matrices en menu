@@ -19,13 +19,14 @@ void main()
 	int matriz[MAXF][MAXC],matrizaux[MAXF][MAXC];
 	cout<<"Ingrese el tamaño de la matriz(Filas y columnas)";
 	cin>>n>>m;
+
 	do
 	{cout<<"-----------------------------MENU---------------------------"<<endl;
 	cout<<"1.Cargar"<<endl;
 	cout<<"2.Mostrar"<<endl;
 	cout<<"3.Mayor"<<endl;
 	cout<<"4.Clasificar"<<endl;
-	cout<<"5.Multiplicar matrices"<<endl;
+	cout<<"5.Multiplicar matrices(Solo cuadradas)"<<endl;
 	cout<<"6.Mostrar multiplicacion"<<endl;
 	cout<<"7.Salir"<<endl;
 	cout<<"Ingrese la opcion";
@@ -52,6 +53,8 @@ void main()
 
 		getch();
 }
+
+
 
 void Cargar(int Matrix[MAXF][MAXC],int n, int m)
 {int i, j;

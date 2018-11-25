@@ -1,0 +1,67 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAXF 20
+#define MAXC 20
+
+using namespace std;
+
+void Cargar(float Matriz[MAXF][MAXC], int N);
+void Sumar(float A[MAXF][MAXC], float B[MAXF][MAXC],float C[MAXF][MAXC], int N);
+void Mostrar(float C[MAXF][MAXC], int N);
+
+void main()
+{
+	float a[MAXF][MAXC], b[MAXF][MAXC], c[MAXF][MAXC];
+	int n;
+
+	cout << "Ingrese el tamaño de la matriz: ";
+	cin >> n;
+	cout << "Ingrese valores de la 1° matriz" << endl;
+	Cargar(a, n);
+	cout << "Ingrese valores de la 2° matriz" << endl;
+	Cargar(b, n);
+	cout << "Suma de matrices" << endl;
+	Sumar(a, b, c, n);
+	Mostrar(c, n);
+
+	_getwch();
+
+}
+
+void Cargar(float Matriz[MAXF][MAXC], int N)
+{
+	int i, j;
+
+	for (i = 0; i<N; i++)
+		for (j = 0; j<N; j++)
+		{
+			cout << "MAT [" << i << "] [" << j << "]: ";
+			cin >> Matriz[i][j];
+		}
+}
+
+
+void Sumar(float A[MAXF][MAXC], float B[MAXF][MAXC],float C[MAXF][MAXC], int N)
+{
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			C[i][j] = A[i][j] + B[i][j];
+		}
+	}
+
+}
+
+void Mostrar(float C[MAXF][MAXC], int N)
+{
+	int i, j;
+	cout << endl;
+	for (i = 0; i<N; i++)
+	{
+		for (j = 0; j<N; j++)
+			cout << "MAT [" << i << "] [" << j << "]: " << C[i][j] << "\t";
+		cout << endl;
+	}
+}

@@ -9,105 +9,153 @@ using namespace std;
 
 void main()
 {
-	
-	cout<<" _______________________________________________________                               "<<endl;
-    cout<<"|   _______    _______   __    ___                                                     "<<endl;
-	cout<<"|  |  _____|  |  _____| |  |  /  /                                                     "<<endl;
-	cout<<"|  | |        |  |      |  | /  /                                                      "<<endl;
-	cout<<"|  |	| _____  |  |__    |   /  /                                                       "<<endl;
-	cout<<"|  | | |__ |  |   __|   |     /                                                        "<<endl;
-	cout<<"|  | |   | |  |  |      |  |\  \                                                       "<<endl;
-	cout<<"|  | |___| |  |  |____  |  | \  \                                                      "<<endl;
-	cout<<"|  |_______|  |_______| |__|  \ _\                                                     "<<endl;
-	cout<<"|                                                                                      "<<endl;
-	cout<<"|                                                                                      "<<endl;
-	cout<<"|                               <<<<<BIENVENIDOS A GEEKEND>>>>>                        "<<endl;
-	cout<<"|                         <<<<<TU PLATAFORMA PARA APRENDER PROGRAMAR>>>>>             "<<endl;
-	
-	
-	int opcion;
+
+	cout << " _______________________________________________________                               " << endl;
+	cout << "|   _______    _______   __    ___                                                     " << endl;
+	cout << "|  |  _____|  |  _____| |  |  /  /                                                     " << endl;
+	cout << "|  | |        |  |      |  | /  /                                                      " << endl;
+	cout << "|  | | _____  |  |__    |   /  /                                                       " << endl;
+	cout << "|  | | |__ |  |   __|   |     /                                                        " << endl;
+	cout << "|  | |   | |  |  |      |  |\  \                                                       " << endl;
+	cout << "|  | |___| |  |  |____  |  | \  \                                                      " << endl;
+	cout << "|  |_______|  |_______| |__|  \ _\                                                " << endl;
+	cout << "|                                                                                      " << endl;
+	cout << "|                                                                                      " << endl;
+	cout << "|                               <<<<<BIENVENIDOS A GEEKEND>>>>>                        " << endl;
+	cout << "|                         <<<<<TU PLATAFORMA PARA APRENDER PROGRAMAR>>>>>             " << endl;
+
+
+	int opcion, i, opcion2, opcion3;
 	string nombre;
 	string pass;
 	string usuario;
 	string contraseña;
-	int i;
-	do{
-	cout<<"<<Login>>"<<endl;
-	cout<<"1. Crear usuario"<<endl;
-	cout<<"2. Preguntas"<<endl;
-	cout<<"Ingrese opcion: ";
 	
-	cin>>opcion;
+	do {										//LOGIN//
+		cout << "<<Login>>" << endl;
+		cout << "1. Crear usuario" << endl;
+		cout << "2. Preguntas" << endl;
+		cout << "Ingrese opcion: ";
 
-	switch(opcion)
-		{case 1: {cout<<"Por favor ingrese su nombre de usuario"<<endl;
-				 cin>>usuario;
-				 cout<<"Porfavor ingrese su contraseña"<<endl;
-				 cin>>contraseña;
-				 cout<<"Ingrese 0 para poder ingresar";
-				 break;}
-		case 2: {cout<<"proximamente"<<endl;
-				 cin>>contraseña;
-				break;
-				}
-		
-	system("cls");
-	}
-	}
-	while(opcion!=0);
-	
-	
-	for(i=1; i<4; i++){
+		cin >> opcion;
+
+		switch (opcion)
+		{
+		case 1: {cout << "Por favor ingrese su nombre de usuario" << endl;
+			cin >> usuario;
+			cout << "Porfavor ingrese su contraseña" << endl;
+			cin >> contraseña;
+			cout << "Ingrese 0 para poder ingresar"<<endl;
+			break; }
+		case 2: {cout << "proximamente" << endl;
+			cin >> contraseña;
+			break;
+		}
+
+				system("cls");
+		}
+	} while (opcion != 0);
+
+												//REGISTRO DEL LOGIN//
+	for (i = 1; i<4; i++) {
 		system("cls");
 		cout << endl;
-		cout << "        BIENVENIDO AL SISTEMA DE LOGIN " << endl;
+		cout << "        BIENVENIDO AL SISTEMA DE LOGIN    " << endl;
 		cout << "___________________________________________" << endl;
 		cout << endl;
 		cout << "Por favor ingrese su informacion de usuario" << endl;
 		cout << endl;
 		cout << "¿Nombre de usuario?" << endl;
 		cin >> nombre;
-		if(nombre == usuario){
-		cout << "Nombre de usuario correcto, por favor ingrese su contrasena:" << endl;
-		cin >> pass;
-			if(pass == contraseña){
-			cout << endl;
-			cout << "Contrasena correcta, bienvenido, sera redirigido a la aplicacion" << endl;
-			system("pause>null");
-			exit(0);
+		if (nombre == usuario) {
+			cout << "Nombre de usuario correcto, por favor ingrese su contrasena:" << endl;
+			cin >> pass;
+			if (pass == contraseña) {
+				cout << endl;
+				cout << "Contrasena correcta, bienvenido, sera redirigido a la aplicacion" << endl;
+				system("pause>null");
+				
+						
+						do {							//Comienzo del programa Menu//
+							cout << "                     <<<<<<MENU>>>>>            " << endl;
+							cout << "1. Cursos" << endl;
+							cout << "2. Practicas" << endl;
+							cout << "3. Ejercicios " << endl;
+							cout << "4. Videos" << endl;
+							cout << "5. Soporte " << endl;
+							cout << "6. Ajustes" << endl;
 
+							cout << "Ingrese una opcion" << endl;
+							cin >> opcion2;
+
+							switch (opcion2)
+							{
+								case 1:				//CURSOS DE C++//
+									{do {  
+										cout << "                Bienvenidos al apartado de curos en C++            " << endl;
+										cout << "Temas: " << endl;
+										cout << " 1. Introduccion a la programacion" << endl;
+										cout << " 2. Introduccion a C++" << endl;
+										cout << " 3. Variables " << endl;
+										cout << " 4. Operadores" << endl;
+										cout << " 5. Bucles(Secuenciales y Condicionales) " << endl;
+										cout << " 6. Funciones " << endl;
+										cout << " 7. Arreglos " << endl;
+										cout << " 8. Clase String " << endl;
+										cout << " 9. Matrices " << endl;
+										cout << " 0. Salir" << endl;
+										
+										cout << "Proximamente el curso completo ._." << endl;
+										cout << "Ingrese una opcion: " << endl;
+										
+										cin >> opcion3;
+
+										//switch(opcion3)//
+
+
+							
+}
+
+
+
+
+							}
+						} 
+
+						
+						while (i==10000);
 			}
 			else
-				if(pass != contraseña){
-				cout << "Contrasena incorrecta, por favor ingrese un usuario y contrasena valida" << endl;
-				system("pause>null");
+				if (pass != contraseña) {
+					cout << "Contrasena incorrecta, por favor ingrese un usuario y contrasena valida" << endl;
+					system("pause>null");
 				}
-			}
+		}
 		else
-			if(nombre != usuario){
-			cout << "Nombre de usuario incorrecto, por favor ingrese su nombre de usuario nuevamente" << endl;
+			if (nombre != usuario) {
+				cout << "Nombre de usuario incorrecto, por favor ingrese su nombre de usuario nuevamente" << endl;
+				system("pause>null");
+			}
+
+		if (i > 0) {
+			cout << endl;
+			cout << "Ha realizado " << i << "/3 intentos" << endl;
+			cout << endl;
 			system("pause>null");
 		}
-
-		if(i > 0){
-		cout << endl;
-		cout << "Ha realizado " << i << "/3 intentos" << endl;
-		cout << endl;
-		system("pause>null");
-		}
-		if(i == 3){
-		cout << endl;
-		cout << "Ha realizado 3 intentos, por seguridad el programa se cerrara..." << endl;
-		system("pause>null");
-		exit(0);
+		if (i == 3) {
+			cout << endl;
+			cout << "Ha realizado 3 intentos, por seguridad el programa se cerrara..." << endl;
+			system("pause>null");
+			exit(0);
 		}
 	}
 
-	if(nombre == usuario&&pass == contraseña)
+	if (nombre == usuario && pass == contraseña)
 	{
-		cout<<"Holis";
+		cout << "Holis";
 		system("pause>null");
 	}
 
-	getch();
-	}
+	_getwch();
+}

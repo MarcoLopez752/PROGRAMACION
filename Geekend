@@ -9,35 +9,39 @@ using namespace std;
 
 void main()
 {
-
-	cout << " _______________________________________________________                               " << endl;
-	cout << "|   _______    _______   __    ___                                                     " << endl;
-	cout << "|  |  _____|  |  _____| |  |  /  /                                                     " << endl;
-	cout << "|  | |        |  |      |  | /  /                                                      " << endl;
-	cout << "|  | | _____  |  |__    |   /  /                                                       " << endl;
-	cout << "|  | | |__ |  |   __|   |     /                                                        " << endl;
-	cout << "|  | |   | |  |  |      |  |\  \                                                       " << endl;
-	cout << "|  | |___| |  |  |____  |  | \  \                                                      " << endl;
-	cout << "|  |_______|  |_______| |__|  \ _\                                                " << endl;
-	cout << "|                                                                                      " << endl;
-	cout << "|                                                                                      " << endl;
-	cout << "|                               <<<<<BIENVENIDOS A GEEKEND>>>>>                        " << endl;
-	cout << "|                         <<<<<TU PLATAFORMA PARA APRENDER PROGRAMAR>>>>>             " << endl;
-
-
 	int opcion, i, opcion2, opcion3;
 	string nombre;
 	string pass;
 	string usuario;
 	string contraseña;
 	
-	do {										//LOGIN//
-		cout << "<<Login>>" << endl;
-		cout << "1. Crear usuario" << endl;
-		cout << "2. Preguntas" << endl;
-		cout << "Ingrese opcion: ";
+	cout << " ______________________________________________________________________________________                               " << endl;
+	cout << "|   _______    _______   _______   __    ___  _______   ___      __   ___ _ _          |                            " << endl;
+	cout << "|  |  _____|  |  _____| |  _____| |  |  /  / |   ____| |   -    |  | |     _ _         |                        " << endl;
+	cout << "|  | |        |  |      |  |      |  | /  /  |  |      |    -   |  | | |     _ _       |                    " << endl;
+	cout << "|  | | _____  |  |__    |  |__    |   /  /   |  |__    |     -  |  | | |       _ _     |                     " << endl;
+	cout << "|  | | |__ |  |   __|   |   __|   |     /    |   __|   |  |-  - |  | | |       _ _     |                    " << endl;
+	cout << "|  | |   | |  |  |      |  |      |  |- -    |  |      |  |  - -|  | | |      _ _      |                  " << endl;
+	cout << "|  | |___| |  |  |____  |  |____  |  | - -   |  |____  |  |  -     | | |__  _ _        |                 " << endl;
+	cout << "|  |_______|  |_______| |_______| |__| |__|  |_______| |__|   -____| |___ _ _          |             " << endl;
+	cout << "|                                                                                      |" << endl;
+	cout << "|                                                                                      |" << endl;
+	cout << "|                               <<<<<BIENVENIDOS A GEEKEND>>>>>                        |" << endl;
+	cout << "|                         <<<<<TU PLATAFORMA PARA APRENDER PROGRAMAR>>>>>              |" << endl;
+	cout << "|                                                                                      |" << endl;
 
+	
+
+	do {										//LOGIN//
+		cout << "|______________________________________________________________________________________|" << endl;
+		cout << "|                               -----Login------				       |" << endl;
+		cout << "|                               1. Crear usuario				       |" << endl;
+		cout << "|                               2. Preguntas					       |" << endl;
+		cout << "|                               3. Ingresar					       |" << endl;
+		cout << "|                               Digite una opcion:				       |" << endl;
+		cout << "|______________________________________________________________________________________|" << endl;
 		cin >> opcion;
+		system("cls");
 
 		switch (opcion)
 		{
@@ -45,7 +49,8 @@ void main()
 			cin >> usuario;
 			cout << "Porfavor ingrese su contraseña" << endl;
 			cin >> contraseña;
-			cout << "Ingrese 0 para poder ingresar"<<endl;
+			cout << "Ingrese 3 seguidamente para poder ingresar" << endl;
+			system("pause>null");
 			break; }
 		case 2: {cout << "proximamente" << endl;
 			cin >> contraseña;
@@ -54,10 +59,11 @@ void main()
 
 				system("cls");
 		}
-	} while (opcion != 0);
+	} while (opcion != 3);
 
-												//REGISTRO DEL LOGIN//
-	for (i = 1; i<4; i++) {
+	//REGISTRO DEL LOGIN//
+	for (i = 1; i < 4; i++)
+	{
 		system("cls");
 		cout << endl;
 		cout << "        BIENVENIDO AL SISTEMA DE LOGIN    " << endl;
@@ -74,56 +80,8 @@ void main()
 				cout << endl;
 				cout << "Contrasena correcta, bienvenido, sera redirigido a la aplicacion" << endl;
 				system("pause>null");
-				
-						
-						do {							//Comienzo del programa Menu//
-							cout << "                     <<<<<<MENU>>>>>            " << endl;
-							cout << "1. Cursos" << endl;
-							cout << "2. Practicas" << endl;
-							cout << "3. Ejercicios " << endl;
-							cout << "4. Videos" << endl;
-							cout << "5. Soporte " << endl;
-							cout << "6. Ajustes" << endl;
+				break;
 
-							cout << "Ingrese una opcion" << endl;
-							cin >> opcion2;
-
-							switch (opcion2)
-							{
-								case 1:				//CURSOS DE C++//
-									{do {  
-										cout << "                Bienvenidos al apartado de curos en C++            " << endl;
-										cout << "Temas: " << endl;
-										cout << " 1. Introduccion a la programacion" << endl;
-										cout << " 2. Introduccion a C++" << endl;
-										cout << " 3. Variables " << endl;
-										cout << " 4. Operadores" << endl;
-										cout << " 5. Bucles(Secuenciales y Condicionales) " << endl;
-										cout << " 6. Funciones " << endl;
-										cout << " 7. Arreglos " << endl;
-										cout << " 8. Clase String " << endl;
-										cout << " 9. Matrices " << endl;
-										cout << " 0. Salir" << endl;
-										
-										cout << "Proximamente el curso completo ._." << endl;
-										cout << "Ingrese una opcion: " << endl;
-										
-										cin >> opcion3;
-
-										//switch(opcion3)//
-
-
-							
-}
-
-
-
-
-							}
-						} 
-
-						
-						while (i==10000);
 			}
 			else
 				if (pass != contraseña) {
@@ -150,12 +108,88 @@ void main()
 			exit(0);
 		}
 	}
+	system("cls");
 
-	if (nombre == usuario && pass == contraseña)
-	{
-		cout << "Holis";
-		system("pause>null");
-	}
+	do {							//Comienzo del programa Menu//
+		cout << "                     <<<<<<MENU>>>>>            " << endl;
+		cout << "1. Cursos" << endl;
+		cout << "2. Practicas" << endl;
+		cout << "3. Ejercicios " << endl;
+		cout << "4. Videos" << endl;
+		cout << "5. Soporte " << endl;
+		cout << "6. Ajustes" << endl;
+		cout << "0.Salir" << endl;
+		cout << "Ingrese una opcion" << endl;
+		cin >> opcion2;
+		system("cls");
+		switch (opcion2)
+		{
+		case 1:				//CURSOS DE C++//
+		{
+			do {
+				cout << "                Bienvenidos al apartado de cursos en C++            " << endl;
+				cout << "Temas: " << endl;
+				cout << " 1. Introduccion a la programacion" << endl;
+				cout << " 2. Introduccion a C++" << endl;
+				cout << " 3. Variables " << endl;
+				cout << " 4. Operadores" << endl;
+				cout << " 5. Bucles(Secuenciales y Condicionales) " << endl;
+				cout << " 6. Funciones " << endl;
+				cout << " 7. Arreglos " << endl;
+				cout << " 8. Clase String " << endl;
+				cout << " 9. Matrices " << endl;
+				cout << " 0. Salir" << endl;
+
+				cout << "Proximamente el curso completo ._." << endl;
+				cout << "Ingrese una opcion: " << endl;
+				
+				cin >> opcion3;
+				system("cls");
+				switch (opcion3)
+				{
+				case 1:
+				{cout << "Proximamente" << endl;
+				break; }
+				case 2:
+				{cout << "Proximamente" << endl;
+				break; }
+				case 3:
+				{cout << "Proximamente" << endl;
+				break; }
+				case 4:
+				{cout << "Proximamente" << endl;
+				break; }
+				case 5:
+				{cout << "Proximamente" << endl;
+				break; }
+				case 6:
+				{cout << "Proximamente" << endl;
+				break; }
+				case 7:
+				{cout << "Proximamente" << endl;
+				break; }
+				case 8:
+				{cout << "Proximamente" << endl;
+				break; }
+				case 9:
+				{cout << "Proximamente" << endl;
+				break; }
+
+				}
+			} while (opcion3 != 0);
+
+
+
+
+
+			break;
+		}
+
+		}
+	} while (opcion2 != 0);
+
+
+
 
 	_getwch();
 }

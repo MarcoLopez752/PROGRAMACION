@@ -34,7 +34,7 @@ void main()
 	do{
 	cout<<"<<Login>>"<<endl;
 	cout<<"1. Crear usuario"<<endl;
-	cout<<"2. contrasena"<<endl;
+	cout<<"2. Preguntas"<<endl;
 	cout<<"Ingrese opcion: ";
 	
 	cin>>opcion;
@@ -44,12 +44,13 @@ void main()
 				 cin>>usuario;
 				 cout<<"Porfavor ingrese su contraseña"<<endl;
 				 cin>>contraseña;
+				 cout<<"Ingrese 0 para poder ingresar";
 				 break;}
-		case 2: {cout<<"Porfavor ingrese su contraseña"<<endl;
+		case 2: {cout<<"proximamente"<<endl;
 				 cin>>contraseña;
 				break;
 				}
-		cout<<"Ingrese 0 para poder ingresar";
+		
 	system("cls");
 	}
 	}

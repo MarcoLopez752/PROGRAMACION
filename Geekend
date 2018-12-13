@@ -4,8 +4,9 @@
 #include <string>
 
 using namespace std;
-
-
+void Funcion();
+void arreglos();
+void Matrices();
 
 void main()
 {
@@ -14,7 +15,7 @@ void main()
 	string pass;
 	string usuario;
 	string contraseña;
-	
+
 	cout << " ______________________________________________________________________________________                               " << endl;
 	cout << "|   _______    _______   _______   __    ___  _______   ___      __   ___ _ _          |                            " << endl;
 	cout << "|  |  _____|  |  _____| |  _____| |  |  /  / |   ____| |   -    |  | |     _ _         |                        " << endl;
@@ -30,7 +31,7 @@ void main()
 	cout << "|                         <<<<<TU PLATAFORMA PARA APRENDER PROGRAMAR>>>>>              |" << endl;
 	cout << "|                                                                                      |" << endl;
 
-	
+
 
 	do {										//LOGIN//
 		cout << "|______________________________________________________________________________________|" << endl;
@@ -142,7 +143,7 @@ void main()
 
 				cout << "Proximamente el curso completo ._." << endl;
 				cout << "Ingrese una opcion: " << endl;
-				
+
 				cin >> opcion3;
 				system("cls");
 				switch (opcion3)
@@ -198,41 +199,43 @@ void main()
 
 void arreglos()
 {
-	cout<<"Un arreglo es utilizado para almacenar informacion; en vez de declarar multiples variables y almacenar datos individuales se puede declarar un solo arreglo para almacenar todas las variables."<<endl;
-	cout<<"Cuando declares un arreglo especifica el tipo, asi como tambien la cantidad de elementos que tendra."<<endl;
-	cout<<"Ejemplo: "<<endl;
-	cout<<"     int a[5];    "<<endl;
-	cout<<"Esto significa que la variable a fue declarada como un arreglo de 5 valores enteros."<<endl;
-	cout<<"La posicion de los elementos de un arreglo inician desde 0, el segundo elemento se mostrara en la posicion 1 y asi sucesivamente."<<endl;
-	cout<<"Ejemplo: "<<endl;
-	cout<<"       int b[5] = {11,45,62,70,88}"<<endl;
-	cout<<"       b[0]=11     b[1]=45     b[2]=62     b[3]=70     b[4]=88"<<endl;
-	cout<<"1) Cargar elementos en un vector."<<endl;
-	cout<<"Para poder introducir elementos en un arreglo se utiliza el bucle for. Para poder introducir los elementos se debe primeramente introducir cuantos valores ingresaremos en el arreglo."<<endl;
-	cout<<"Ejemplo: "<<endl;
-	cout<<"       int arreglo[5];"<<endl;
-	cout<<"       for(int i=0;i<5;i++)"<<endl;
-	cout<<"           cin>> arreglo[i];"<<endl;			
-	cout<<"En el for la variable i se inicializa en 0 ya que la primer posicion de un arreglo es 0 y se pone de restriccion menor a 5, ya que como inicia en 0 el quinto valor estar en la posicion con el numero 4."<<endl;
-	cout<<"2) Mostrar un Arreglo."<<endl;
-	cout<<"Para mostrar un arreglo se utiliza un for similar al que usamos para cargar elementos en un arreglo."<<endl;
-	cout<<"Ejemplo: "<<endl;
-	cout<<"       int c[5];"<<endl;
-	cout<<"Asumimos que el arreglo ya ha sido cargado."<<endl;
-	cout<<"       for(int i=0;i<5;i++)"<<endl;
-	cout<<"          cout<< c[i]<<endl;"<<endl;
-	cout<<"3) Buscar elementos en un arreglo."<<endl;
-	cout<<"Como las distintas operaciones que se realizan con arreglos utilizaremos un for."<<endl;
-	cout<<"Ejemplo: "<<endl;
-	cout<<"       int d[5];"<<endl;
-	cout<<"Asumiendo que el arreglo esta cargado y tenemos declarada una variable que almacena el numero que deseamos buscar."<<endl;
-	cout<<"       int n=3"<<endl;
-	cout<<"Procedemos a hacer la siguiente operacion."<<endl;
-	cout<<"       for(int i=0;i<5;i++)"<<endl;
-	cout<<"           {"<<endl;
-	cout<<"              if(d[i]==n)"<<endl;
-	cout<<"                 cout<<El numero esta en la posicion: <<i<<"<<endl;
-	cout<<"           }"<<endl;
+	cout << "Un arreglo es utilizado para almacenar informacion; en vez de declarar multiples variables y almacenar datos individuales se puede declarar un solo arreglo para almacenar todas las variables." << endl;
+	cout << "Cuando declares un arreglo especifica el tipo, asi como tambien la cantidad de elementos que tendra." << endl;
+	cout << "Ejemplo: " << endl;
+	cout << "     int a[5];    " << endl;
+	cout << "Esto significa que la variable a fue declarada como un arreglo de 5 valores enteros." << endl;
+	cout << "La posicion de los elementos de un arreglo inician desde 0, el segundo elemento se mostrara en la posicion 1 y asi sucesivamente." << endl;
+	cout << "Ejemplo: " << endl;
+	cout << "       int b[5] = {11,45,62,70,88}" << endl;
+	cout << "       b[0]=11     b[1]=45     b[2]=62     b[3]=70     b[4]=88" << endl;
+	cout << "1) Cargar elementos en un vector." << endl;
+	cout << "Para poder introducir elementos en un arreglo se utiliza el bucle for. Para poder introducir los elementos se debe primeramente introducir cuantos valores ingresaremos en el arreglo." << endl;
+	cout << "Ejemplo: " << endl;
+	cout << "       int arreglo[5];" << endl;
+	cout << "       for(int i=0;i<5;i++)" << endl;
+	cout << "           cin>> arreglo[i];" << endl;
+	cout << "En el for la variable i se inicializa en 0 ya que la primer posicion de un arreglo es 0 y se pone de restriccion menor a 5, ya que como inicia en 0 el quinto valor estar en la posicion con el numero 4." << endl;
+	cout << "2) Mostrar un Arreglo." << endl;
+	cout << "Para mostrar un arreglo se utiliza un for similar al que usamos para cargar elementos en un arreglo." << endl;
+	cout << "Ejemplo: " << endl;
+	cout << "       int c[5];" << endl;
+	cout << "Asumimos que el arreglo ya ha sido cargado." << endl;
+	cout << "       for(int i=0;i<5;i++)" << endl;
+	cout << "          cout<< c[i]<<endl;" << endl;
+	cout << "3) Buscar elementos en un arreglo." << endl;
+	cout << "Como las distintas operaciones que se realizan con arreglos utilizaremos un for." << endl;
+	cout << "Ejemplo: " << endl;
+	cout << "       int d[5];" << endl;
+	cout << "Asumiendo que el arreglo esta cargado y tenemos declarada una variable que almacena el numero que deseamos buscar." << endl;
+	cout << "       int n=3" << endl;
+	cout << "Procedemos a hacer la siguiente operacion." << endl;
+	cout << "       for(int i=0;i<5;i++)" << endl;
+	cout << "           {" << endl;
+	cout << "              if(d[i]==n)" << endl;
+	cout << "                 cout<<El numero esta en la posicion: <<i<<" << endl;
+	cout << "           }" << endl;
+	system("pause>null");
+	system("cls");
 }
 void Funcion()
 {
@@ -281,17 +284,18 @@ void Funcion()
 	cout << "Con esto concluimos la teoria de Funciones." << endl;
 	cout << "Puedes practicar con ejercicios en practicas y analizar ejercicios en el apartado de ejercicios" << endl;
 	cout << "Gracias!!!" << endl;
-
-
+	system("pause>null");
+	system("cls");
 }
+
 void Matrices()
 {
 	cout << "Bienvenidos al curso de matrices en c++" << endl;
 	cout << "En esta clase analizaremos que son y como se usan las matrices en ++." << endl;
 	cout << "Si ya vieron Arreglos entonces no tendran muchos problemas ya que sige la misma logica. Bueno, comencemos. " << endl;
 	cout << "Primero, dejemos claro qué es una matriz. En términos generales, una matriz es una estructura conformada por filas y columnas, idealmente más de dos filas y columnas, de hecho, podemos decir que si una 'matriz' tiene una única fila o una única columna, entonces estamos hablando de un vector y no una matriz como tal." << endl;
-	cout << "La intersección de una fila y una columna de la matriz son las casillas y cada una de ellas podrá poseer información, simple o compleja (ya dependerá de nuestras necesidades)." << endl;
-	cout << "¿Cómo se crea una Matriz en C++?" << endl;
+	cout << "La intersección de una fila y una columna de la matriz son las casillas y cada una de ellas podrá poseer información, simple o compleja (ya dependera de nuestras necesidades)." << endl;
+	cout << "Como se crea una Matriz en C++?" << endl;
 	cout << "Declarar una matriz en C++ es muy similar a la de un vector, se deben seguir las mismas normas para declarar una variable pero una vez más con un pequeño cambio en la sintaxis. Primero necesitaremos saber el tipo de los datos que irán al interior de este (números, decimales o cadenas de texto, etc.) necesitamos también, como siempre, un nombre para la matriz y un tamaño máximo tanto para las filas como para las columnas. La sintaxis para declarar una matriz en C++ es la siguiente:" << endl;
 	cout << "tipoDato nombreMatriz[filas][columnas];" << endl;
 	cout << "Tenemos entonces, como podrás ver, que la sintaxis es casi la misma excepto que hemos añadido un par de corchetes '[]' más esta vez y al interior de éstos debemos poner el número de filas y columnas máximas de la matriz, respectivamente. Veamos un ejemplo en el cual pondré la declaración de varias matrices de diferentes tipos y tamaños en C++." << endl;
@@ -306,4 +310,6 @@ void Matrices()
 	cout << "Para realizar ejercicios con matrices mas generales necesitamos crear funciones que carguen nuestra matriz a gusto y darle un tamaño" << endl;
 	cout << "Ven a la seccion de practicas de matrices para ver todas las posibilidades y practica en el apartado de practicas" << endl;
 	cout << "Gracias!" << endl;
+	system("pause>null");
+	system("cls");
 }

@@ -3,6 +3,7 @@
 #include "conio.h"
 #include <string>
 
+using namespace std;
 
 class Suma_Enteros
 {
@@ -21,7 +22,9 @@ void set_x(int y)
 
 Suma_Enteros Suma(Suma_Enteros a, Suma_Enteros b)
 {
-	return a.get_x + b.get_x;
+	Suma_Enteros c;
+	c.x= a.x + b.x;
+	return c;
 }
 
 void leer()
@@ -43,11 +46,11 @@ void mostrar()
 
 
 
-using namespace std;
+
 
 void main()
 {
-	int y;
+	
 	Suma_Enteros a, b, c;
 
 	a.leer();
@@ -55,5 +58,5 @@ void main()
 	c = c.Suma(a, b);
 	cout << c.get_x();
 
-	_getwch();
+	getch();
 }

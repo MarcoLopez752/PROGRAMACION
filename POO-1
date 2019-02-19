@@ -1,0 +1,59 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+
+class Suma_Enteros
+{
+private: 
+	int x;
+public:
+int get_x()
+{
+	return x;
+}
+
+void set_x(int y)
+{
+	x = y;
+}
+
+Suma_Enteros Suma(Suma_Enteros a, Suma_Enteros b)
+{
+	return a.get_x + b.get_x;
+}
+
+void leer()
+{
+	cout << "De el valor: ";
+	cin >> x;
+	
+}
+
+void mostrar()
+{
+	cout << "El valor es: " << x;
+}
+
+
+
+};
+
+
+
+
+using namespace std;
+
+void main()
+{
+	int y;
+	Suma_Enteros a, b, c;
+
+	a.leer();
+	b.leer();
+	c = c.Suma(a, b);
+	cout << c.get_x();
+
+	_getwch();
+}

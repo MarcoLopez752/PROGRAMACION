@@ -1,0 +1,121 @@
+//Programa principal//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Naturales.h"
+
+using namespace std;
+
+void main()
+{
+	Naturales a,b,c;
+
+	a.Leer();
+	b.Leer();
+
+	if(!a.Mayor(b))
+	{
+		c=a.Unir(b);
+	}
+	else
+	{
+		c=b.Unir(a);
+	}
+
+	c.Mostrar();
+
+	getch();
+}
+
+
+//clase//
+
+
+#pragma once
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+
+class Naturales
+{
+	int entero;
+
+public:
+	//Metodos de acceso//
+	int get_entero()
+	{
+		return entero;
+	}
+
+	void set_entero(int e)
+	{
+		entero=e;
+	}
+	
+	void Leer()
+	{
+		cout<<"Ingrese el numero a unir"<<endl;
+		cin>>entero;
+	}
+
+	void Mostrar()
+
+	{
+		cout<<"La union de digito es: "<<entero<<endl;
+	}
+
+	
+
+	bool Mayor(Naturales y)
+	{
+		if(y.entero<entero)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	int Contar_digitos()
+	{
+		int i=entero;
+		int contar=0;
+		while(i>0)
+		{	i=i/10;
+		contar=contar+1;}
+		
+		return contar;
+
+	}
+
+	Naturales Unir(Naturales y)
+	{	Naturales c;
+		int i=entero;
+		int conta=y.Contar_digitos(); //Cuenta los digitos del mayor para poder agrandar el menor en funcion a los digitos que se necesita para agregar al mayor//
+
+		while(conta>0)
+		{
+			i=i*10;
+			conta=conta-1;
+		
+		}
+
+		i=i+y.entero;
+		c.entero=i;
+		return c;
+	}
+
+	/*void Unir_Naturales(Naturales M)
+	{
+		if(entero)	
+	
+	}*/
+
+};
+

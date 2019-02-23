@@ -1,0 +1,19 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#include "Naturales.h"
+
+
+using namespace std;
+
+void main()
+{
+	Naturales C;
+	C.Leer();
+	C.Invertir();
+	C.Mostrar();
+
+	_getwch();
+
+}

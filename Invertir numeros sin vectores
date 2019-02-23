@@ -1,0 +1,57 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+int Digitos(int Entero);
+int Invertir(int Entero, int D);
+
+
+void main()
+{
+	int entero,d;
+	
+	cin >> entero;
+	d=Digitos(entero);
+
+	cout<<Invertir(entero, d);
+	 
+	_getwch();
+}
+
+
+int Digitos(int Entero)
+{
+	int i = Entero;
+	int contar = 0;
+	while (i > 0)
+	{
+		i = i / 10;
+		contar = contar + 1;
+	}
+
+	return contar;
+}
+
+int Invertir(int Entero, int D)
+{
+	int N, n, d, C = 0, i=0;
+	
+	N = Entero;
+	int p=D;
+	for (i; i<D; i++)
+	{
+
+		n = N % 10;
+
+		C = C + n * pow(10, p - 1);
+		N = N / 10;
+		p = p - 1;
+	}
+
+
+
+	return C;
+}

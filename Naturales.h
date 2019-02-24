@@ -41,6 +41,49 @@ public:
 		cout << "La union de digito es: " << entero << endl;
 	}
 
+	bool Mayor(Naturales y)
+	{
+		if (y.entero<entero)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	int Contar_digitos()
+	{
+		int i = entero;
+		int contar = 0;
+		while (i>0)
+		{
+			i = i / 10;
+			contar = contar + 1;
+		}
+
+		return contar;
+
+	}
+
+	Naturales Unir(Naturales y)
+	{
+		Naturales c;
+		int i = entero;
+		int conta = y.Contar_digitos(); 
+
+		while (conta>0)
+		{
+			i = i * 10;
+			conta = conta - 1;
+
+		}
+
+		i = i + y.entero;
+		c.entero = i;
+		return c;
+	}
 	int Invertir()
 	{
 		int a = 0;
@@ -60,7 +103,7 @@ public:
 	int Random()
 	{
 		srand(time(NULL));
-		entero= 1 + rand() % (100);
+		entero = 1 + rand() % (100);
 		return entero;
 
 	}
@@ -83,9 +126,33 @@ public:
 		}
 
 		while (entero != Dato.entero);
-		
+
 		cout << "Felicidades adivinaste el numero" << endl;
 		return 0;
 	}
 
+	int Elevar()
+	{
+		entero = entero * 2;
+		return entero;
+	}
+
+	int Automorfico(Naturales y)
+	{
+		int p = y.Elevar();
+		int n = y.get_entero();
+		int d = y.Contar_digitos();
+		int c = pow(10, d);
+
+		if (p%c == n)
+		{
+			cout << "El numero es automorfico";
+		}
+		if(p%c!=n)
+		{
+			cout << "El numero no es automorfico";
+		}
+
+		return 0;
+	}
 };

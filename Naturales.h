@@ -1,7 +1,15 @@
+#pragma once
+
+
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
+#include "math.h"
+#include <stdlib.h>
+#include "Naturales.h"
+#include <time.h>
 
+using namespace std;
 
 class Naturales
 {
@@ -49,7 +57,35 @@ public:
 
 	}
 
+	int Random()
+	{
+		srand(time(NULL));
+		entero= 1 + rand() % (100);
+		return entero;
+
+	}
 
 
+	int Adivinanza(Naturales Dato)
+	{
+		do
+		{
+			cout << "Digite un numero: ";
+			cin >> entero;
+			if (entero > Dato.entero)
+			{
+				cout << "Digite un numero menor" << endl;
+			}
+			if (entero < Dato.entero)
+			{
+				cout << "Digite un numero mayor" << endl;
+			}
+		}
+
+		while (entero != Dato.entero);
+		
+		cout << "Felicidades adivinaste el numero" << endl;
+		return 0;
+	}
 
 };

@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#include <stdlib.h>
+#include "Naturales.h"
+#include <time.h>
+
+using namespace std;
+
+void main()
+{
+	Naturales a, dato;
+	srand(time(NULL));
+	dato.Random();
+
+	a.Adivinanza(dato);
+	
+	_getwch();
+
+}

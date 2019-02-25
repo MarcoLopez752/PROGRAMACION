@@ -35,15 +35,25 @@ public:
 		cin >> entero;
 	}
 
+	void  Escuchar()
+	{
+		cin >> entero;
+	}
+
 	void Mostrar()
 
 	{
 		cout << "La union de digito es: " << entero << endl;
 	}
 
+	void Ver()
+	{
+		cout << entero << endl;
+	}
+
 	bool Mayor(Naturales y)
 	{
-		if (y.entero<entero)
+		if (y.entero < entero)
 		{
 			return true;
 		}
@@ -57,7 +67,7 @@ public:
 	{
 		int i = entero;
 		int contar = 0;
-		while (i>0)
+		while (i > 0)
 		{
 			i = i / 10;
 			contar = contar + 1;
@@ -71,9 +81,9 @@ public:
 	{
 		Naturales c;
 		int i = entero;
-		int conta = y.Contar_digitos(); 
+		int conta = y.Contar_digitos();
 
-		while (conta>0)
+		while (conta > 0)
 		{
 			i = i * 10;
 			conta = conta - 1;
@@ -137,22 +147,74 @@ public:
 		return entero;
 	}
 
-	int Automorfico(Naturales y)
+	int invertir(int I)
 	{
-		int p = y.Elevar();
-		int n = y.get_entero();
-		int d = y.Contar_digitos();
-		int c = pow(10, d);
-
-		if (p%c == n)
-		{
-			cout << "El numero es automorfico";
+		int v, a = I, n = 0;
+		while (a > 0)
+		{						
+			n = n * 10 + a % 10;
+			a = a / 10;
 		}
-		if(p%c!=n)
-		{
-			cout << "El numero no es automorfico";
-		}
-
-		return 0;
+		return n;
 	}
+
+
+
+	Naturales Palindromo()
+	{
+		Naturales a;
+		int b;
+		b = invertir(entero);
+		a.entero = b;
+		return a;
+	}
+
+	bool Ciclo(int a, int b) //repeticion//
+	{
+		bool cont = false;
+		int c = 0;
+		while (a > 0 && c<2)
+		{
+			if (b == a % 10)
+			{
+				c=c+1;
+			}
+			if (c > 1)
+			{
+				cont = true;
+				break;
+			}
+			a = a / 10;
+		}
+		return cont;
+	}
+
+	int guardar(int n, int d)
+	{
+		int x = n, y = 0, v = 1;
+		while (x > 0) {
+			if (d != x % 10)
+			{
+				y = y + (x % 10) * v;
+				v = v * 10;
+			}
+			x = x / 10;
+		}
+		return y;
+	}
+
+	Naturales No_Repetidos()
+	{
+		Naturales y;
+		for (int i = 0; i < 10; i++)
+		{
+			if (Ciclo(entero, i))
+			{
+				entero = guardar(entero, i);
+			}
+		}
+		y.entero = entero;
+		return y;
+	}
+
 };

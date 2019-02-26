@@ -1,0 +1,187 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#include <stdlib.h>
+#include "Naturales.h"
+#include <time.h>
+
+using namespace std;
+
+void main()
+
+{
+	int opcion;
+	cout << "Practico de Naturales--Clases" << endl;
+
+	do {
+		cout << "---------------MENU----------------" << endl;
+		cout << "1. Concatenar (Menor-Mayor)" << endl;
+		cout << "2.Depuracion de digitos repetidos" << endl;
+		cout << "3.Invertir" << endl;
+		cout << "4. Eliminar digito mayor" << endl;
+		cout << "5. Insertar digito en numero" << endl;
+		cout << "6. Palindromo" << endl;
+		cout << "7.Planilla de sueldos" << endl;
+		cout << "8.Adivinar" << endl;
+		cout << "9. Crapulo" << endl;
+		cout << "10. Automorfico" << endl;
+		cout << "11. Salir" << endl;
+
+		cout << "Ingrese opcion" << endl;
+		cin >> opcion;
+		system("cls");
+
+
+
+			switch (opcion)
+			{
+				case 1:
+				{
+					Naturales a, b, c;
+
+					a.Leer();
+					b.Leer();
+
+					if (!a.Mayor(b))
+					{
+						c = a.Unir(b);
+					}
+					else
+					{
+						c = b.Unir(a);
+					}
+
+					c.Mostrar();
+
+					system("pause>null");
+					system("cls");
+					break; 
+			
+
+				}
+				case 2:
+				{
+					Naturales a, b;
+					cout << "Ingrese un numero: ";
+					a.Escuchar();
+					b = a.No_Repetidos();
+					b.Ver();
+				
+					system("pause>null");
+					system("cls");
+					break;
+				}
+				case 3:
+				{
+					Naturales C;
+
+					C.Escuchar();
+					C.Invertir().Ver();
+					
+
+					system("pause>null");
+					system("cls");
+					break;
+				}
+				case 4:
+				{
+					Naturales a;
+					a.Escuchar();
+					a.Eliminar().Ver();
+					
+					system("pause>null");
+					system("cls");
+					break;
+				}
+				case 5:
+				{
+					Naturales a;
+					a.LeerD();
+					a.Insertar().Ver();
+
+					system("pause>null");
+					system("cls");
+					break;
+				}
+				case 6:
+				{
+					Naturales a, b;
+
+					cout << "Ingrese numero: " << endl;
+					a.Escuchar();
+					b = a.Palindromo();
+					if (a.get_entero() == b.get_entero())
+					{
+						cout << "Es palindromo";
+					}
+					else
+					{
+						cout << "No es palindromo";
+					}
+					cout << endl;
+
+					system("pause>null");
+					system("cls");
+					break;
+
+				}
+				case 7:
+				{
+					Naturales a;
+					cout << "Ingrese numero de trabajadores a calcular: ";
+					a.LeerHoras();
+					a.Tabla();
+					
+					system("pause>null");
+					system("cls");
+					break;
+
+				}
+				case 8:
+				{
+					Naturales a, dato;
+					srand(time(NULL));
+					dato.Random();
+
+					a.Adivinanza(dato);
+
+					system("pause>null");
+					system("cls");
+					break;
+				}
+				case 9:
+				{
+					cout << "En proceso" << endl;
+					
+					system("pause>null");
+					system("cls");
+					break;
+				}
+				case 10:
+				{
+					Naturales a;
+					a.set_entero(1);
+					a.Automorfico();
+
+					system("pause>null");
+					system("cls");
+					break;
+				}
+
+
+
+		}
+	} while (opcion != 11);
+
+
+
+
+
+
+
+
+
+
+	_getwch();
+}

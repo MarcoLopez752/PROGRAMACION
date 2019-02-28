@@ -1,0 +1,96 @@
+#pragma once
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <Math.h>
+
+using namespace std;
+
+class Naturales
+{	
+	int entero;
+
+public:
+
+	int get_entero()
+	{
+		return entero;
+	}
+
+	void set_entero(int e )
+	{
+		entero=e;
+	}
+
+	void Leer()
+	{
+		cout<<"De el valor: ";
+		cin>>entero;
+	}
+
+	void Escribir()
+	{
+		cout<<entero;
+	}
+
+	int Contar_Digitos()
+	{
+		int contador=0;
+		Naturales digito;
+		digito.set_entero(get_entero());
+
+		while(digito.get_entero()>0)
+		{
+			digito.set_entero(digito.entero/10);
+			contador++;
+		}
+		
+		return contador;
+	}
+
+	int Elevar()
+	{
+		Naturales a;
+		
+	
+	}
+	bool Verificar(Naturales x)
+	{
+		Naturales aux,d,aux2;
+		aux.entero=entero;
+		aux2=aux;
+		int contar=aux.Contar_Digitos()-1;
+		
+
+		while(aux.entero>0)
+		{
+			d.entero=aux.entero/(powf(10,contar));
+			contar--;
+			aux.entero/=10;
+
+			if(d.entero==x.entero)
+			{
+				return true;			
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+
+	Naturales Insertar()
+	{
+		Naturales r;
+		Naturales d;
+		Naturales a;
+		a.set_entero(get_entero());
+		d.set_entero(a.Contar_Digitos());
+		
+
+	
+	}
+
+
+};
+

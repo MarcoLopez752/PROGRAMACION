@@ -1,0 +1,61 @@
+#include <iostream>
+
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int Contar_Digitos(int N);
+int main()
+{  /* float dato=3.15373737;
+	float dato1=4.48484848;
+	cout<<setprecision(2); //rodondeo a n digitos//
+	cout<<setfill('s');    //Rellena con un caracter los espacios//
+	cout<<setw(6)<<dato<<endl; //setw indica el tamaño de las variables//
+	cout<<dato1<<endl;
+	
+	
+	float N=54321;
+	float N1=21;
+	int a,b,c;
+	cout<<N<<endl;
+	cout<<setfill(' ');
+	cout<<"x";
+	cout<<setw(4)<<N1<<endl;
+	
+	*/
+
+	float N=54321;
+	float N1=21;
+	int a,b,c;
+	a=Contar_Digitos(N);
+	b=Contar_Digitos(N1);
+	c=a-b;
+
+	cout<<N<<endl;
+	cout<<setfill(' ');
+	cout<<"x";
+	cout<<setw(c)<<N1<<endl;
+
+    float j=6;
+    cout<<setiosflags(ios::showpoint|ios::showpos)<<endl;
+    cout<<(j+5);
+
+
+	
+
+return 0;
+
+}
+
+int Contar_Digitos(int N)
+{
+	int i=N;
+	int cont=0;
+	while(N>0)
+	{
+		N/=10;
+		cont=cont+1;
+	}
+	return cont;
+}

@@ -1,0 +1,409 @@
+//main//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Vectores.h"
+
+
+using namespace std;
+
+
+void main()
+{
+	Vector a,b,c,x;
+	Vector num;
+	int opcion;
+	int pos;
+	int v,o;
+	string valor;
+	do
+	{
+		cout << "1. Llennar Todo " << endl;
+		cout << "2. Borrar todo" << endl;
+		cout << "3. Insertar Uno" << endl;
+		cout << "4. Eliminar Uno" << endl;
+		cout << "5. Mostrar" << endl;
+		cout << "6: Frecuencia" << endl;
+		cout << "7. Buscar numero" << endl;
+		cout << "8. Suma de vectores cruzado" << endl;
+		cout << "9. Mover hacia arriba" << endl;
+		cout << "10. Mover hacia abajo" << endl;
+		cout << "0: Salir" << endl;
+		cin >> opcion;
+		switch (opcion)
+		{
+		case 1:
+		{	cout << "Numero de vector: ";
+			cin >> o;
+			if(o==1)
+			{
+				a.Cargar(o);
+			}
+			if (o == 2)
+			{
+				b.Cargar(o);
+			}
+			break;
+		}
+		case 2:
+		{
+
+			if (!a.Borrar())
+			{
+				cout << "Vector vacio" << endl;
+			}
+
+			break;
+		}
+		case 3:
+		{
+			cout << "de la posicion: "; cin >> pos;
+			cout << "de el valor: "; cin >> v;
+			if (a.Insertar(pos, v) != true) { cout << "vector lleno o posicion mala" << endl; }
+			break;
+		}
+
+		case 4:
+		{
+			cout << "de la posicion: ";
+			cin >> pos;
+			if (a.Eliminar(pos, v) != true) {
+				cout << "vector vacio o posicion mala" << endl;
+
+			}
+			else { cout << "el dato es: " << v; }
+			break;
+		}
+		case 5:
+		{	cout << "Numero de vector:";
+			cin >> o;
+			if (o == 1)
+			{
+				a.Ver(o);
+			}
+			if (o == 2)
+			{
+				b.Ver(o);
+			}
+			break;
+		}
+
+		case 6:
+		{
+			cout << "Inserte numero a buscar frecuencia: ";
+			num.Leer();
+			a.Frecuencia(num, x);
+			cout << "La frecuencia es de: ";
+			x.Mostrar();
+			cout << endl;
+			break;
+		}
+
+		case 7:
+		{
+			cout << "Inserte numero a buscar";
+			num.Leer();
+			a.Busqueda(num, x);
+			cout << "El numero esta en la posicion:";
+			x.Mostrar();
+			cout << endl;
+			break;
+		}
+		
+		case 8:
+		{	int t = 3;
+			a.Suma(c);
+			c.Ver(t);
+			break;
+		}
+
+		case 9:
+		{
+			a.Retro();
+			break;
+		}
+
+		case 10:
+		{
+			a.Front();
+			break;
+		}
+	}
+	
+	} while ((opcion != 0) && (opcion <12));
+
+	_getwch();
+}
+
+
+
+//Clase//
+
+#pragma once
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+const int n = 20;
+
+
+class Vector
+{
+	int vector[n];
+	int tamano;
+	
+	int num;
+
+public:
+
+	int get_vector(int p)
+	{
+		return vector[p];
+	}
+
+	void set_vector(int p,int s)
+	{
+		vector[p]=s;
+	}
+
+	int get_num()
+	{
+		return tamano;
+	}
+	void set_num(int n)
+	{
+		num = n;
+	}
+
+	int get_tamano()
+	{
+		return tamano;
+	}
+
+	void set_tamano(int t)
+	{
+		tamano = t;
+	}
+	void Leer()
+	{
+		cin >> num;
+	}
+	void Mostrar()
+	{
+		cout << num;
+	}
+
+	void Cargar(int &o) {
+		int tam;
+		cout << "el tamano es: "; cin >> tam;
+		int i = 0;
+		while (i < tam) {
+			cout << "vector"<<o<<"[" << i << "]:";
+			cin >> vector[i];
+			i++;
+			tamano = i;
+
+		}
+	}
+
+	void Ver(int &o) {
+
+		int i = 0;
+		while (i < tamano) {
+			cout << "vector"<<o<<"[" << i << "]:" << vector[i] << endl;
+			i++;
+		}
+
+	}
+	bool vacio()
+	{
+		if (tamano == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	bool lleno()
+	{
+		if (tamano == n)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	void Frecuencia(Vector a,Vector &x)
+	{
+		
+		int i, cont = 0;
+		
+
+		if (lleno()||tamano<n)
+		{	
+			for (i=0; i < tamano; i++)
+			{
+				if (a.num == vector[i])
+				{
+					cont += 1;
+					
+				}
+			}
+
+		}
+		else
+		{
+			x.set_num(0);
+
+		}
+		x.set_num(cont);
+		
+
+	}
+
+	bool Insertar(int p, int s)
+	{
+		if (lleno())
+		{
+			return false;
+		}
+		if (vacio() == true) {
+			vector[0] = s;
+			tamano++;
+			return true;
+
+		}
+		if (p<0 || p>tamano)
+		{
+			return false;
+		}
+		else
+		{
+			int i = tamano;
+			while (i > p)
+			{
+				vector[i] = vector[i - 1];
+				i--;
+			}
+			vector[p] = s;
+			tamano++;
+			return true;
+		}
+	}
+
+	bool Borrar() {
+		int i;
+		if (vacio() == true)
+		{
+			return false;
+		}
+		i = 0;
+		while (i < tamano)
+		{
+			vector[i] = 0;
+			i++;
+		}
+	}
+	bool Eliminar(int p, int x) 
+	{
+		if (vacio())
+		{
+			return false;
+		}
+		if (p < 0 || p >= tamano)
+		{
+			return false;
+		}
+		else
+		{
+			int i = p;
+			x = vector[p];
+			while (i < tamano)
+			{
+				vector[i] = vector[i + 1];
+				i++;
+			}
+			tamano--;
+			return true;
+		}
+	}
+
+	void Busqueda(Vector b,Vector &x)
+	{
+		int i;
+		
+		for (i = 0; i < tamano; i++)
+		{
+			if (vector[i] == b.num)
+			{
+				x.set_num(i);
+				break;
+			}
+			else 
+			{
+				x.set_num(-1);
+			}
+		}
+
+	}
+
+	void Suma(Vector &c)
+	{
+	
+		int i,sum;
+		int x = 2;
+		int n = 0;
+		int m = tamano;
+		Vector y;
+		y.Cargar(x);
+
+		for (i = 0; i <= tamano; i++)
+		{	
+			sum = vector[n] + y.get_vector(m);
+			c.set_vector(i,sum);
+			n++;
+			m--;
+		}
+
+
+	}
+
+	void Retro()
+	{
+		int i;
+		int tam = tamano;
+		int aux = vector[0];
+		for (i=0; i <tamano-1 ; i++)
+		{
+			vector[i]= vector[i+1];
+		}
+
+		vector[tam-1]=aux;
+	}
+
+	void Front()
+	{
+		int i;
+		int tam = tamano - 1;
+		int aux = vector[tam];
+		int j = tam;
+		for (i = tam - 1; i >= 0; i--)
+		{
+			vector[j] = vector[i];
+			j--;
+		}
+
+		vector[0] = aux; 
+	}
+
+
+
+};

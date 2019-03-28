@@ -1,0 +1,377 @@
+#pragma once
+#include "stdafx.h"
+#include <iostream>
+#include "Naturales.h"
+
+using namespace System::Windows::Forms;
+using namespace std;
+
+const int N=20;
+const int M=25;
+
+class Matriz
+{	private:
+	Naturales matriz[N][M];
+	int tamano_fila;
+	int tamano_columna;
+public:
+	//Constructor//
+	Matriz(void)
+	{
+		tamano_fila=0;
+		tamano_columna=0;
+	}
+	
+	//Metodos de Acceso//
+	int get_tamano_fila()
+	{return tamano_fila;}
+	int get_tamano_columna()
+	{return tamano_columna;}
+	void set_tamano_fila(int f)
+	{ tamano_fila=f;}
+	void set_tamano_columna(int c)
+	{ tamano_columna=c;}
+	Naturales get_matriz(int f,int c)
+	{ return matriz[f][c];}
+	void set_matriz(int f, int c, Naturales x)
+	{matriz[f][c]=x;}
+
+	/*void Leer()
+	{
+		int i,j,num;
+		Naturales x;
+		cout<<"Ingrese el tamano de la fila"<<endl; 
+		cin>>tamano_fila;
+		cout<<"Ingrese el tamano de la columna"<<endl; 
+		cin>>tamano_columna;
+		if((tamano_fila<N)&&(tamano_columna<M))
+		{
+			i=0;
+			for(i=0;i<tamano_fila;i++)
+			{
+				for(j=0;j<tamano_columna;j++)
+				{cout<<"Matriz["<<i+1<<"]["<<j+1<<"]=";
+				cin>>num;
+				x.set_entero(num);
+				matriz[i][j]=x;
+				}
+			}
+		}
+	}
+
+
+		void Mostrar()
+		{ int i,j;
+			for(i=0;i<tamano_fila;i++)
+			{	for(j=0;j<tamano_columna;j++)
+				{	cout<<get_matriz(i,j).get_entero()<< "  ";
+				} cout<<endl;
+			}
+			
+		}*/
+		
+	Matriz Sumar(Matriz b)
+	{	Naturales c;
+		Matriz d;
+		int i,j;
+		
+		for(i=0;i<get_tamano_fila();i++)
+		{	for( j=0;j<get_tamano_columna();j++)
+			{  c.set_entero(get_matriz(i,j).get_entero()+b.get_matriz(i,j).get_entero());
+				d.set_matriz(i,j,c);
+			}
+		}
+		d.set_tamano_fila(i);
+		d.set_tamano_columna(j);
+		return d;
+	}
+
+		Matriz Restar(Matriz b)
+	{	Naturales c;
+		Matriz d;
+		int i,j;
+		int n;
+		for(i=0;i<get_tamano_fila();i++)
+		{	for( j=0;j<get_tamano_columna();j++)
+			{  c.set_entero(get_matriz(i,j).get_entero()-b.get_matriz(i,j).get_entero());
+				d.set_matriz(i,j,c);
+			}
+		}
+		d.set_tamano_fila(i);
+		d.set_tamano_columna(j);
+		return d;
+	}
+			
+		void Leer(DataGridView^ grilla,TextBox^ fil,TextBox^ col)
+		{
+			
+		}
+
+		void Mostrar(DataGridView^ grilla,TextBox^ fil,TextBox^ col)
+		{
+			
+		}
+
+};
+
+
+
+
+
+//__________________//
+
+
+#pragma once
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+namespace MatricesVisual {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+
+	/// <summary>
+	/// Summary for Form1
+	/// </summary>
+
+
+
+
+
+	public ref class Form1 : public System::Windows::Forms::Form
+	{
+	public:
+		Form1(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~Form1()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::DataGridView^  grilla_X;
+	private: System::Windows::Forms::DataGridView^  grilla_Y;
+	private: System::Windows::Forms::DataGridView^  grilla_Z;
+	private: System::Windows::Forms::TextBox^  ttamano_fila_a;
+	private: System::Windows::Forms::TextBox^  ttamano_columna_a;
+	private: System::Windows::Forms::Button^  bTAMANO_A;
+	private: System::Windows::Forms::Button^  bTAMANO_B;
+	private: System::Windows::Forms::TextBox^  ttamano_columna_b;
+	private: System::Windows::Forms::TextBox^  ttamano_fila_b;
+	private: System::Windows::Forms::Button^  bINSERTAR_A;
+	private: System::Windows::Forms::Button^  bINSERTAR_B;
+	private: System::Windows::Forms::Button^  bMOSTRAR;
+	private: System::Windows::Forms::Button^  bSUMAR;
+
+	protected: 
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->grilla_X = (gcnew System::Windows::Forms::DataGridView());
+			this->grilla_Y = (gcnew System::Windows::Forms::DataGridView());
+			this->grilla_Z = (gcnew System::Windows::Forms::DataGridView());
+			this->ttamano_fila_a = (gcnew System::Windows::Forms::TextBox());
+			this->ttamano_columna_a = (gcnew System::Windows::Forms::TextBox());
+			this->bTAMANO_A = (gcnew System::Windows::Forms::Button());
+			this->bTAMANO_B = (gcnew System::Windows::Forms::Button());
+			this->ttamano_columna_b = (gcnew System::Windows::Forms::TextBox());
+			this->ttamano_fila_b = (gcnew System::Windows::Forms::TextBox());
+			this->bINSERTAR_A = (gcnew System::Windows::Forms::Button());
+			this->bINSERTAR_B = (gcnew System::Windows::Forms::Button());
+			this->bMOSTRAR = (gcnew System::Windows::Forms::Button());
+			this->bSUMAR = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->grilla_X))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->grilla_Y))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->grilla_Z))->BeginInit();
+			this->SuspendLayout();
+			// 
+			// grilla_X
+			// 
+			this->grilla_X->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->grilla_X->Location = System::Drawing::Point(47, 212);
+			this->grilla_X->Name = L"grilla_X";
+			this->grilla_X->Size = System::Drawing::Size(923, 184);
+			this->grilla_X->TabIndex = 0;
+			this->grilla_X->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::grilla_X_CellContentClick);
+			// 
+			// grilla_Y
+			// 
+			this->grilla_Y->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->grilla_Y->Location = System::Drawing::Point(47, 2);
+			this->grilla_Y->Name = L"grilla_Y";
+			this->grilla_Y->Size = System::Drawing::Size(923, 184);
+			this->grilla_Y->TabIndex = 1;
+			this->grilla_Y->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::grilla_Y_CellContentClick);
+			// 
+			// grilla_Z
+			// 
+			this->grilla_Z->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->grilla_Z->Location = System::Drawing::Point(47, 419);
+			this->grilla_Z->Name = L"grilla_Z";
+			this->grilla_Z->Size = System::Drawing::Size(923, 184);
+			this->grilla_Z->TabIndex = 2;
+			// 
+			// ttamano_fila_a
+			// 
+			this->ttamano_fila_a->Location = System::Drawing::Point(1123, 67);
+			this->ttamano_fila_a->Name = L"ttamano_fila_a";
+			this->ttamano_fila_a->Size = System::Drawing::Size(100, 20);
+			this->ttamano_fila_a->TabIndex = 3;
+			this->ttamano_fila_a->Text = L"0";
+			this->ttamano_fila_a->TextChanged += gcnew System::EventHandler(this, &Form1::ttamano_fila_a_TextChanged);
+			// 
+			// ttamano_columna_a
+			// 
+			this->ttamano_columna_a->Location = System::Drawing::Point(1124, 93);
+			this->ttamano_columna_a->Name = L"ttamano_columna_a";
+			this->ttamano_columna_a->Size = System::Drawing::Size(100, 20);
+			this->ttamano_columna_a->TabIndex = 4;
+			this->ttamano_columna_a->Text = L"0";
+			// 
+			// bTAMANO_A
+			// 
+			this->bTAMANO_A->Location = System::Drawing::Point(1148, 119);
+			this->bTAMANO_A->Name = L"bTAMANO_A";
+			this->bTAMANO_A->Size = System::Drawing::Size(75, 23);
+			this->bTAMANO_A->TabIndex = 5;
+			this->bTAMANO_A->Text = L"A tamano";
+			this->bTAMANO_A->UseVisualStyleBackColor = true;
+			this->bTAMANO_A->Click += gcnew System::EventHandler(this, &Form1::bTAMANO_A_Click);
+			// 
+			// bTAMANO_B
+			// 
+			this->bTAMANO_B->Location = System::Drawing::Point(1149, 291);
+			this->bTAMANO_B->Name = L"bTAMANO_B";
+			this->bTAMANO_B->Size = System::Drawing::Size(75, 23);
+			this->bTAMANO_B->TabIndex = 6;
+			this->bTAMANO_B->Text = L"B tamano";
+			this->bTAMANO_B->UseVisualStyleBackColor = true;
+			// 
+			// ttamano_columna_b
+			// 
+			this->ttamano_columna_b->Location = System::Drawing::Point(1124, 265);
+			this->ttamano_columna_b->Name = L"ttamano_columna_b";
+			this->ttamano_columna_b->Size = System::Drawing::Size(100, 20);
+			this->ttamano_columna_b->TabIndex = 8;
+			this->ttamano_columna_b->Text = L"0";
+			// 
+			// ttamano_fila_b
+			// 
+			this->ttamano_fila_b->Location = System::Drawing::Point(1123, 239);
+			this->ttamano_fila_b->Name = L"ttamano_fila_b";
+			this->ttamano_fila_b->Size = System::Drawing::Size(100, 20);
+			this->ttamano_fila_b->TabIndex = 7;
+			this->ttamano_fila_b->Text = L"0";
+			// 
+			// bINSERTAR_A
+			// 
+			this->bINSERTAR_A->Location = System::Drawing::Point(1149, 148);
+			this->bINSERTAR_A->Name = L"bINSERTAR_A";
+			this->bINSERTAR_A->Size = System::Drawing::Size(75, 23);
+			this->bINSERTAR_A->TabIndex = 9;
+			this->bINSERTAR_A->Text = L"A Insertar";
+			this->bINSERTAR_A->UseVisualStyleBackColor = true;
+			// 
+			// bINSERTAR_B
+			// 
+			this->bINSERTAR_B->Location = System::Drawing::Point(1149, 320);
+			this->bINSERTAR_B->Name = L"bINSERTAR_B";
+			this->bINSERTAR_B->Size = System::Drawing::Size(75, 23);
+			this->bINSERTAR_B->TabIndex = 10;
+			this->bINSERTAR_B->Text = L"B Insertar";
+			this->bINSERTAR_B->UseVisualStyleBackColor = true;
+			// 
+			// bMOSTRAR
+			// 
+			this->bMOSTRAR->Location = System::Drawing::Point(1041, 561);
+			this->bMOSTRAR->Name = L"bMOSTRAR";
+			this->bMOSTRAR->Size = System::Drawing::Size(75, 23);
+			this->bMOSTRAR->TabIndex = 11;
+			this->bMOSTRAR->Text = L"Mostrar";
+			this->bMOSTRAR->UseVisualStyleBackColor = true;
+			// 
+			// bSUMAR
+			// 
+			this->bSUMAR->Location = System::Drawing::Point(1234, 561);
+			this->bSUMAR->Name = L"bSUMAR";
+			this->bSUMAR->Size = System::Drawing::Size(75, 23);
+			this->bSUMAR->TabIndex = 12;
+			this->bSUMAR->Text = L"Sumar";
+			this->bSUMAR->UseVisualStyleBackColor = true;
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(1563, 615);
+			this->Controls->Add(this->bSUMAR);
+			this->Controls->Add(this->bMOSTRAR);
+			this->Controls->Add(this->bINSERTAR_B);
+			this->Controls->Add(this->bINSERTAR_A);
+			this->Controls->Add(this->ttamano_columna_b);
+			this->Controls->Add(this->ttamano_fila_b);
+			this->Controls->Add(this->bTAMANO_B);
+			this->Controls->Add(this->bTAMANO_A);
+			this->Controls->Add(this->ttamano_columna_a);
+			this->Controls->Add(this->ttamano_fila_a);
+			this->Controls->Add(this->grilla_Z);
+			this->Controls->Add(this->grilla_Y);
+			this->Controls->Add(this->grilla_X);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->grilla_X))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->grilla_Y))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->grilla_Z))->EndInit();
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+
+	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void grilla_X_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+			 }
+	private: System::Void grilla_Y_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+			 }
+	private: System::Void ttamano_fila_a_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+
+
+private: System::Void bTAMANO_A_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+
+		 }
+
+};
+}
+

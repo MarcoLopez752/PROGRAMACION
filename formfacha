@@ -109,7 +109,22 @@ public:
 
 		void Mostrar(DataGridView^ grilla,TextBox^ fil,TextBox^ col)
 		{
+			int i,j;
+			i=0;
 			
+			grilla->ColumnCount=get_tamano_columna();
+			grilla->RowCount=get_tamano_fila();
+			
+			while(j<get_tamano_fila())
+			{
+				j=0;
+				while(j<get_tamano_columna())
+				{
+					grilla->Rows[i]->Cells[j]->Value=System::Convert::ToString(get_matriz(i,j).get_entero());
+					j++;
+				}
+				i++;
+			}
 		}
 
 };
@@ -369,8 +384,17 @@ namespace MatricesVisual {
 
 private: System::Void bTAMANO_A_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
-
+			grilla_x->ColumnCount=System::Convert::ToInt32(ttamano_columna_a->Text);
+			grilla_x->RowCount=System::Convert::ToInt32(ttamano_fila_a->Text);
 		 }
+
+private: System::Void bTAMANO_A_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			grilla_y->ColumnCount=System::Convert::ToInt32(ttamano_columna_b->Text);
+			grilla_y->RowCount=System::Convert::ToInt32(ttamano_fila_b->Text);
+		 }
+		 
+private : System::Void bInsertar
 
 };
 }

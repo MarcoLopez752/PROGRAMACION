@@ -1,0 +1,138 @@
+#pragma once
+#include <iostream>
+#include "math.h"
+using namespace std;
+
+class Naturales
+{
+	int entero;
+
+public:
+
+	int Get_num()
+	{
+		return entero;
+	}
+
+	void Set_num(int y)
+	{
+		entero = y;
+	}
+
+	int Contar_digitos()
+	{
+		int i = entero, cont = 0;
+		while (i>0)
+		{
+			i = i / 10;
+			cont++;
+		}
+		return cont;
+
+	}
+
+	void Mostrar()
+	{
+		cout << entero << endl;
+	}
+
+	void Leer()
+	{
+		cin >> entero;
+	}
+	
+
+	bool Ciclo(int a, int b,int &c)
+	{
+		bool cont = false;
+		c = 0;
+		while (a > 0)
+		{
+			if (b == a % 10)
+			{
+				c = c + 1;
+			}
+			a /= 10;
+		}
+
+		if (c > 2)
+			cont=true;
+		
+
+		return cont;
+	}
+
+	int guardar(int n, int d,int c)
+	{
+		int aux = n;
+		int i;
+		int v = 1,y=0;
+		int cont=0;
+		int p = c - 2;
+		while (aux > 0)
+		{
+			if (d != aux % 10)
+			{
+				y = y + (aux % 10) * v;
+				v = v * 10;
+			}
+
+			else
+			{
+				if ( c>p)
+				{
+					y = y + (aux % 10) * v;
+					v = v * 10;
+					p++;
+				}
+
+			}
+		
+
+			aux = aux / 10;
+			
+		}
+		
+			return y;
+	}
+
+	Naturales No_Repetidos()
+	{
+		int c;
+		Naturales y;
+		for (int i = 0; i < 10; i++)
+		{
+			if (Ciclo(entero, i, c))
+			{
+				entero = guardar(entero, i,c);
+			}
+		}
+		y.entero = entero;
+		return y;
+	}
+
+
+};
+
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Naturales.h"
+
+using namespace std;
+
+
+void main()
+{
+	Naturales a;
+
+	a.Leer();
+	a.No_Repetidos();
+
+	a.Mostrar();
+	
+	_getwch();
+
+}
